@@ -1,4 +1,4 @@
 #! /bin/sh
 
-asciidoctor --backend docbook --out-file - $1 | \
+asciidoctor -r asciidoctor-diagram --backend docbook --out-file - $1 | \
     pandoc --from docbook --to docx --reference-doc simple-doc.docx --output `basename $1 .adoc`.docx
